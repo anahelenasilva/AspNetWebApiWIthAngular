@@ -1,0 +1,45 @@
+<form #form="ngForm" autocomplete="off" *ngIf="service.formData">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="from-group">
+        <label for="">Order #</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text">#</div>
+          </div>
+          <input type="text" class="form-control" name="OrderNo" #OrderNo="ngModel" [(ngModel)]="service.formData.OrderNo" readonly>
+        </div>
+      </div>
+      <div class="from-group">
+        <label for="">Customer</label>
+        <select type="text" class="form-control" name="CustomerId" #CustomerId="ngModel" [(ngModel)]="service.formData.CustomerId">
+          <option value="0">-Select-</option>
+        </select>
+      </div>
+    </div>
+  </div>
+    <div class="col-md-6">
+      <div class="from-group">
+        <label for="">Payment Method</label>
+        <select type="text" class="form-control" name="PaymentMethod" #PaymentMethod="ngModel" [(ngModel)]="service.formData.PaymentMethod">
+          <option value="">-Select-</option>
+          <option value="Cash">Cash</option>
+          <option value="Card">Card</option>
+        </select>
+      </div>
+      <div class="from-group">
+        <label for="">Grand Total</label>
+
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text">$</div>
+          </div>
+          <input type="text" class="form-control" name="GrandTotal" #GrandTotal="ngModel" [(ngModel)]="service.formData.GrandTotal" readonly>
+        </div>        
+      </div>
+    </div>
+
+    <div class="form-group">
+      <button type="submit btn btn-dark"><i class="fa fa-database"></i> Submit</button>
+    </div>
+</form>
